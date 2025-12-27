@@ -1,0 +1,14 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Ne pas committer les clés (si vous les mettez dans un fichier séparé)
+config.js
+.env
