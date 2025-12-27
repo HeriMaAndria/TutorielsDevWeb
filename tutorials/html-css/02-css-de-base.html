@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS de base - Styliser votre première page | Tutoriels Dev Web</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tutorial.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="../../index.html">← Retour à l'accueil</a>
+        </nav>
+
+        <div class="tutorial-header">
+            <h1>CSS de base - Styliser votre première page</h1>
+            <p>Découvrez comment rendre vos pages web attractives avec le CSS.</p>
+
+            <div class="tutorial-meta">
+                <div class="meta-item">
+                    <span>📚</span>
+                    <span>Catégorie: HTML & CSS</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <span>Durée: 20-25 minutes</span>
+                </div>
+                <div class="meta-item">
+                    <span class="badge">Débutant</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>1. Qu'est-ce que le CSS ?</h2>
+            <p>
+                CSS signifie <strong>Cascading Style Sheets</strong> (Feuilles de style en cascade).
+                C'est le langage qui permet de styliser vos pages HTML. Si le HTML est le squelette d'une page web,
+                le CSS en est l'apparence : couleurs, polices, espacement, mise en page, animations, etc.
+            </p>
+
+            <div class="info-box">
+                <strong>💡 Bon à savoir :</strong> Le CSS a été créé en 1996 pour séparer le contenu (HTML) de la
+                présentation (CSS).
+                Aujourd'hui, la version CSS3 offre des possibilités incroyables : dégradés, animations, flexbox, grid,
+                et bien plus !
+            </div>
+
+            <p>Grâce au CSS, vous pouvez transformer une page HTML brute en un site web moderne et attrayant.</p>
+
+            <h2>2. Trois façons d'ajouter du CSS</h2>
+
+            <h3>Méthode 1 : CSS Inline (dans la balise)</h3>
+            <p>Ajoutez du style directement dans une balise HTML avec l'attribut <code>style</code> :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>&lt;p style="color: blue; font-size: 18px;"&gt;
+    Ce texte est bleu et de taille 18px.
+&lt;/p&gt;</pre>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Attention :</strong> Cette méthode n'est pas recommandée pour les projets réels car elle rend
+                le code difficile à maintenir. À utiliser uniquement pour des tests rapides.
+            </div>
+
+            <h3>Méthode 2 : CSS Internal (dans le head)</h3>
+            <p>Placez vos styles dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code> de votre
+                page :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>&lt;head&gt;
+    &lt;style&gt;
+        p {
+            color: blue;
+            font-size: 18px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</pre>
+            </div>
+
+            <p>Cette méthode est utile pour de petites pages ou pour tester rapidement des styles.</p>
+
+            <h3>Méthode 3 : CSS External (fichier séparé) ✅ RECOMMANDÉ</h3>
+            <p>Créez un fichier CSS séparé (ex: <code>style.css</code>) et liez-le à votre HTML :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</pre>
+            </div>
+
+            <p>Dans votre fichier <code>style.css</code> :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>p {
+    color: blue;
+    font-size: 18px;
+}</pre>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Pourquoi c'est la meilleure méthode :</strong>
+                <ul>
+                    <li>Un seul fichier CSS pour tout le site</li>
+                    <li>Facile à maintenir et à modifier</li>
+                    <li>Le navigateur met le CSS en cache (site plus rapide)</li>
+                    <li>Code HTML plus propre et lisible</li>
+                </ul>
+            </div>
+
+            <h2>3. Les sélecteurs CSS</h2>
+
+            <h3>Sélecteur d'élément</h3>
+            <p>Cible tous les éléments d'un type donné :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* Tous les paragraphes seront en rouge */
+p {
+    color: red;
+}
+
+/* Tous les titres h1 seront en bleu */
+h1 {
+    color: blue;
+}</pre>
+            </div>
+
+            <h3>Sélecteur de classe</h3>
+            <p>Cible les éléments avec une classe spécifique. Les classes commencent par un point <code>.</code></p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* HTML */
+&lt;p class="important"&gt;Ce texte est important&lt;/p&gt;
+
+/* CSS */
+.important {
+    color: red;
+    font-weight: bold;
+}</pre>
+            </div>
+
+            <h3>Sélecteur d'ID</h3>
+            <p>Cible un élément unique avec un ID spécifique. Les IDs commencent par un dièse <code>#</code></p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* HTML */
+&lt;div id="header"&gt;En-tête du site&lt;/div&gt;
+
+/* CSS */
+#header {
+    background-color: navy;
+    color: white;
+}</pre>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Classe vs ID :</strong>
+                <ul>
+                    <li><strong>Classe</strong> : Peut être utilisée sur plusieurs éléments</li>
+                    <li><strong>ID</strong> : Doit être unique sur la page</li>
+                    <li>Préférez les classes pour la flexibilité !</li>
+                </ul>
+            </div>
+
+            <h2>4. Propriétés CSS essentielles</h2>
+
+            <h3>Couleurs</h3>
+            <p>Plusieurs façons de définir les couleurs :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* Noms de couleurs */
+color: red;
+background-color: blue;
+
+/* Hexadécimal */
+color: #ff0000;
+background-color: #0000ff;
+
+/* RGB */
+color: rgb(255, 0, 0);
+background-color: rgb(0, 0, 255);
+
+/* RGBA (avec transparence) */
+background-color: rgba(0, 0, 255, 0.5); /* 50% transparent */</pre>
+            </div>
+
+            <h3>Polices et texte</h3>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* Police */
+font-family: Arial, sans-serif;
+
+/* Taille */
+font-size: 16px;
+
+/* Épaisseur */
+font-weight: bold; /* ou normal, ou 100-900 */
+
+/* Style */
+font-style: italic;
+
+/* Alignement */
+text-align: center; /* left, right, justify */
+
+/* Décoration */
+text-decoration: underline; /* line-through, none */</pre>
+            </div>
+
+            <h3>Espacement</h3>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* Marge externe (autour de l'élément) */
+margin: 20px;
+margin-top: 10px;
+margin-right: 15px;
+margin-bottom: 10px;
+margin-left: 15px;
+
+/* Marge interne (à l'intérieur de l'élément) */
+padding: 20px;
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 15px;
+
+/* Raccourci */
+margin: 10px 20px; /* haut/bas gauche/droite */
+padding: 10px 20px 15px 25px; /* haut droite bas gauche */</pre>
+            </div>
+
+            <h2>5. Le Box Model (Modèle de boîte)</h2>
+            <p>
+                Chaque élément HTML est une boîte composée de plusieurs couches.
+                Comprendre le Box Model est essentiel pour maîtriser le CSS.
+            </p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* De l'extérieur vers l'intérieur : */
+
+margin       ← Espace autour de l'élément
+  |
+border     ← Bordure de l'élément
+  |
+padding    ← Espace à l'intérieur de l'élément
+  |
+content    ← Contenu réel (texte, image, etc.)</pre>
+            </div>
+
+            <p>Exemple pratique :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>.box {
+    width: 200px;           /* Largeur du contenu */
+    height: 100px;          /* Hauteur du contenu */
+    padding: 20px;          /* Espace interne */
+    border: 2px solid black; /* Bordure */
+    margin: 30px;           /* Espace externe */
+    background-color: lightblue;
+}</pre>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Astuce :</strong> Par défaut, width et height ne comptent QUE le contenu.
+                Pour inclure padding et border dans la largeur totale, utilisez :
+                <pre style="margin-top: 10px;">box-sizing: border-box;</pre>
+            </div>
+
+            <h2>6. Exemple complet</h2>
+            <p>Voici un exemple complet qui combine HTML et CSS :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma page stylisée&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="site-header"&gt;
+        &lt;h1&gt;Mon Super Site&lt;/h1&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;p class="intro"&gt;Bienvenue sur mon site !&lt;/p&gt;
+        &lt;p&gt;Ceci est un paragraphe normal.&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+
+            <p>Et le fichier CSS correspondant :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <pre>/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.site-header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.intro {
+    font-size: 1.2em;
+    color: #0066cc;
+    font-weight: bold;
+}</pre>
+            </div>
+
+            <h2>7. Exercice pratique</h2>
+
+            <div class="exercise-box">
+                <h3>🎯 À votre tour !</h3>
+                <p>Créez une page "À propos" stylisée :</p>
+                <ol>
+                    <li>Créez un fichier <code>about.html</code> avec votre structure HTML de base</li>
+                    <li>Créez un fichier <code>style.css</code></li>
+                    <li>Ajoutez un header avec votre nom (fond coloré, texte blanc, centré)</li>
+                    <li>Ajoutez une section avec une description de vous (fond blanc, ombré, padding)</li>
+                    <li>Stylisez les titres et paragraphes avec des couleurs et polices</li>
+                    <li>Utilisez des marges et padding pour espacer vos éléments</li>
+                </ol>
+                <p><strong>Bonus :</strong> Ajoutez une bordure arrondie (<code>border-radius</code>) et
+                    une ombre (<code>box-shadow: 0 4px 8px rgba(0,0,0,0.1)</code>) à vos sections !</p>
+            </div>
+
+            <h2>8. Conclusion</h2>
+            <p>
+                Félicitations ! 🎉 Vous maîtrisez maintenant les bases du CSS. Vous savez comment ajouter du style
+                à vos pages, cibler des éléments, et utiliser les propriétés essentielles.
+            </p>
+
+            <div class="info-box">
+                <strong>📚 Prochaines étapes :</strong>
+                <ul>
+                    <li>Apprenez CSS Flexbox pour créer des layouts modernes</li>
+                    <li>Découvrez les Media Queries pour le responsive design</li>
+                    <li>Explorez les animations et transitions CSS</li>
+                    <li>Maîtrisez CSS Grid pour des mises en page complexes</li>
+                </ul>
+            </div>
+
+            <p>
+                Le CSS est un langage très vaste. Plus vous pratiquerez, plus vous découvrirez de possibilités.
+                N'hésitez pas à expérimenter et à vous inspirer d'autres sites !
+            </p>
+
+            <div class="navigation-buttons">
+                <a href="01-introduction-html.html" class="nav-btn prev">
+                    ← Tutoriel précédent
+                </a>
+                <a href="../../index.html" class="nav-btn next">
+                    Retour à l'accueil →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copié !';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.textContent = 'Copier';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>
