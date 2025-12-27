@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,13 +135,14 @@
             h1 {
                 font-size: 2em;
             }
-            
+
             .tutorials-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -149,10 +151,11 @@
         </header>
 
         <div class="tutorials-grid">
-            <div class="tutorial-card" onclick="alert('Tutoriel bientôt disponible !')">
+            <div class="tutorial-card" onclick="window.location.href='tutorials/html-css/01-introduction-html.html'">
                 <div class="tutorial-icon">💻</div>
                 <h2>HTML & CSS</h2>
-                <p>Maîtrisez les bases du développement web avec HTML5 et CSS3. Créez vos premières pages web responsive.</p>
+                <p>Maîtrisez les bases du développement web avec HTML5 et CSS3. Créez vos premières pages web
+                    responsive.</p>
                 <span class="difficulty debutant">Débutant</span>
             </div>
 
@@ -173,7 +176,8 @@
             <div class="tutorial-card" onclick="alert('Tutoriel bientôt disponible !')">
                 <div class="tutorial-icon">🎨</div>
                 <h2>Design UI/UX</h2>
-                <p>Apprenez les principes du design pour créer des interfaces utilisateur attrayantes et fonctionnelles.</p>
+                <p>Apprenez les principes du design pour créer des interfaces utilisateur attrayantes et fonctionnelles.
+                </p>
                 <span class="difficulty debutant">Débutant</span>
             </div>
 
@@ -200,13 +204,14 @@
 
     <script>
         document.querySelectorAll('.tutorial-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.background = 'rgba(255, 255, 255, 1)';
             });
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 this.style.background = 'rgba(255, 255, 255, 0.95)';
             });
         });
     </script>
 </body>
+
 </html>
