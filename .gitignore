@@ -1,14 +1,12 @@
-# Fichiers système
-.DS_Store
-Thumbs.db
+# Fichiers Windows
+Thums.db
+Desktop.ini
 
-# Éditeurs
+#Fichier temporaires
+*.tmp
+*.bak
+*~
+
+# Dossiers à ignorer
+node_modules/
 .vscode/
-.idea/
-
-# Logs
-*.log
-
-# Ne pas committer les clés (si vous les mettez dans un fichier séparé)
-config.js
-.env
